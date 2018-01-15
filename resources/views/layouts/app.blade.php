@@ -10,6 +10,7 @@
     <title>@yield('title','kinanobbs')--基于Laravel5.5的BBS系统</title>
     <!--Style-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">
@@ -25,6 +26,8 @@
 
         @include('layouts._footer')
     </div>
+    <!--Script-->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
