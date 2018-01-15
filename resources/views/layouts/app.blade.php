@@ -8,6 +8,7 @@
     <!--CSRF Token-->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title','kinanobbs')--基于Laravel5.5的BBS系统</title>
+    <meta name="description" content="@yield('description','KinanoBBS')" />
     <!--Style-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
