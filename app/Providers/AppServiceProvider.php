@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Link;
+use App\Observers\LinkObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,17 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
 	{
-//		\App\Models\User::observe(\App\Observers\UserObserver::class);
-//		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
-//		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
-//
-//        //
-//        \Carbon\Carbon::setLocale('zh');
-        $this->register();
-        \Horizon::auth(function ($request){
-            //是否是站长
-            return \Auth::user()->hasRole('Founder');
-        });
+		\App\Models\User::observe(\App\Observers\UserObserver::class);
+		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
+		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+		\App\Models\Link::observe(\App\Observers\LinkObserver::class);
+        \Carbon\Carbon::setLocale('zh');
     }
 
     /**
