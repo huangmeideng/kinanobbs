@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        //一小时执行一次【活跃用户】生成命令
+        $schedule->command('kinanobbs:calculate-active-user')->hourly();
     }
 
     /**
